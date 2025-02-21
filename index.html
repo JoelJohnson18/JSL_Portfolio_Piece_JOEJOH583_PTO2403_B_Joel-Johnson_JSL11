@@ -35,8 +35,8 @@
             id="icon-dark"
             alt="icon-dark-theme"
           />
-          <input type="checkbox" id="theme-switch" />
-          <label for="theme-switch" id="label-checkbox-theme"></label>
+          <input type="checkbox" id="switch" />
+          <label for="switch" id="label-checkbox-theme"></label>
           <img
             src="./assets/icon-light-theme.svg"
             id="icon-light"
@@ -120,17 +120,23 @@
     <form class="modal-window" id="new-task-modal-window">
       <h4 class="modal-title">Add New Task</h4>
       <div class="input-div">
-        <label class="label-modal-window" for="title-input">Title</label>
+        <label
+          class="label-modal-window"
+          id="modal-title-input"
+          for="title-input"
+          >Title</label
+        >
         <input
           type="text"
           class="modal-input"
           id="title-input"
           placeholder="e.g. Take a little break"
-          required
         />
       </div>
       <div class="input-div">
-        <label class="label-modal-window" for="desc-input">Description</label>
+        <label class="label-modal-window" id="modal-desc-input" for="desc-input"
+          >Description</label
+        >
         <textarea
           name="description"
           id="desc-input"
@@ -138,8 +144,13 @@
         ></textarea>
       </div>
       <div class="input-div">
-        <label class="label-modal-window" for="select-status">Status</label>
-        <select name="status" id="select-status" required>
+        <label
+          class="label-modal-window"
+          id="modal-select-status"
+          for="select-status"
+          >Status</label
+        >
+        <select name="status" id="select-status">
           <option value="todo">todo</option>
           <option value="doing">doing</option>
           <option value="done">done</option>
@@ -164,9 +175,8 @@
             id="edit-task-title-input"
             class="task-title-input"
             placeholder="Task Title"
-            required
           />
-          <button type="button" id="edit-btn" class="edit-btn"></button>
+          <button id="edit-btn" class="edit-btn"></button>
         </div>
         <div class="edit-task-div">
           <textarea
@@ -199,7 +209,7 @@
       </form>
     </div>
 
-    <div id="filterDiv" style="display: none"></div>
+    <div id="filterDiv"></div>
 
     <!-- JavaScript Import -->
     <script type="module" src="./index.js"></script>
