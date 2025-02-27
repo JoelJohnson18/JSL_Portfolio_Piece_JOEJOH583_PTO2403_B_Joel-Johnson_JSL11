@@ -681,7 +681,7 @@ input#edit-task-title-input.task-title-input {
   padding-right: 35px;
   font-weight: 600;
   cursor: pointer;
-  flex-grow: 1; /* Allows the button to grow and fill the space */
+  flex-grow: 1; /* Allow the button to grow and fill the space */
   margin: 5px 0; /* Optional: adds a margin between buttons */
 }
 
