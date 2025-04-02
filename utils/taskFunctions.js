@@ -2,13 +2,13 @@
 
 // Simulate fetching tasks from localStorage
 export const getTasks = () => {
-  const tasks = localStorage.getItem('tasks');
+  const tasks = localStorage.getItem("tasks");
   return tasks ? JSON.parse(tasks) : [];
 };
 
 // Simulate saving tasks to localStorage
 const saveTasks = (tasks) => {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
 export const createNewTask = (task) => {
@@ -19,14 +19,13 @@ export const createNewTask = (task) => {
   return newTask; // Return the newly created task
 };
 
-
 export const patchTask = (id, updates) => {
   const tasks = getTasks();
-  const taskIndex = tasks.findIndex(task => task.id === id);
+  const taskIndex = tasks.findIndex((task) => task.id === id);
   if (taskIndex > -1) {
-      tasks[taskIndex] = { ...tasks[taskIndex], ...updates };
-      saveTasks(tasks);
-      // Previously: location.reload(); Now: We'll refresh the UI instead.
+    tasks[taskIndex] = { ...tasks[taskIndex], ...updates };
+    saveTasks(tasks);
+    // Previously: location.reload(); Now: We'll refresh the UI instead.
   }
   return tasks; // Optionally return the updated tasks list for further processing
 };
@@ -43,7 +42,7 @@ export const putTask = (id, updatedTask) => {
 
 export const deleteTask = (id) => {
   const tasks = getTasks();
-  const updatedTasks = tasks.filter(task => task.id !== id);
+  const updatedTasks = tasks.filter((task) => task.id !== id);
   saveTasks(updatedTasks);
   // Previously: location.reload(); Now: We'll refresh the UI instead.
   return updatedTasks; // Optionally return the updated tasks list for further processing
